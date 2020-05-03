@@ -1,0 +1,71 @@
+{% load static %}
+
+<!-- begin:: Header -->
+<div id="kt_header" class="kt-header kt-grid__item  kt-header--fixed ">
+    <!-- begin:: Header Menu -->
+    <div class="kt-header-menu-wrapper" id="kt_header_menu_wrapper">
+        <div id="kt_header_menu" class="kt-header-menu kt-header-menu-mobile  kt-header-menu--layout-default ">
+            <ul class="kt-menu__nav ">
+                <li class="kt-menu__item  kt-menu__item--open kt-menu__item--here kt-menu__item--submenu kt-menu__item--rel kt-menu__item--open kt-menu__item--here kt-menu__item--active" data-ktmenu-submenu-toggle="click" aria-haspopup="true">
+                    <a href="javascript:;" class="kt-menu__link kt-menu__toggle">
+                        <span class="kt-menu__link-text">TreasuryNet Budget Monitoring System</span>
+                        <i class="kt-menu__ver-arrow la la-angle-right"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- end:: Header Menu -->
+
+    <!-- begin:: Header Topbar -->
+    <div class="kt-header__topbar">
+
+        <!--begin: User Bar -->
+        <div class="kt-header__topbar-item kt-header__topbar-item--user">
+            <div class="kt-header__topbar-wrapper" data-toggle="dropdown" data-offset="0px,0px">
+                <div class="kt-header__topbar-user">
+
+                    <!--use below badge element instead the user avatar to display username's first letter(remove kt-hidden class to display it) -->
+                    <span class="kt-badge kt-badge--username kt-badge--unified-success kt-badge--lg kt-badge--rounded kt-badge--bold">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1" class="kt-svg-icon">
+                            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                <rect x="0" y="0" width="24" height="24"/>
+                                <path d="M7.62302337,5.30262097 C8.08508802,5.000107 8.70490146,5.12944838 9.00741543,5.59151303 C9.3099294,6.05357769 9.18058801,6.67339112 8.71852336,6.97590509 C7.03468892,8.07831239 6,9.95030239 6,12 C6,15.3137085 8.6862915,18 12,18 C15.3137085,18 18,15.3137085 18,12 C18,9.99549229 17.0108275,8.15969002 15.3875704,7.04698597 C14.9320347,6.73472706 14.8158858,6.11230651 15.1281448,5.65677076 C15.4404037,5.20123501 16.0628242,5.08508618 16.51836,5.39734508 C18.6800181,6.87911023 20,9.32886071 20,12 C20,16.418278 16.418278,20 12,20 C7.581722,20 4,16.418278 4,12 C4,9.26852332 5.38056879,6.77075716 7.62302337,5.30262097 Z" fill="#000000" fill-rule="nonzero"/>
+                                <rect fill="#000000" opacity="0.3" x="11" y="3" width="2" height="10" rx="1"/>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="dropdown-menu dropdown-menu-fit dropdown-menu-right dropdown-menu-anim dropdown-menu-top-unround dropdown-menu-xl">
+
+                <!--begin: Head -->
+                <div class="kt-user-card kt-user-card--skin-dark kt-notification-item-padding-x" style="background-image: url(assets/media/misc/bg-1.jpg)">
+                    <div class="kt-user-card__avatar">
+                        <img alt="Pic" src="{% static 'media/users/department_user.png' %}" />
+                    </div>
+                    <div class="kt-user-card__name"></div>
+                    <div class="kt-user-card__badge">
+                        <span class="btn btn-success btn-sm btn-bold btn-font-md">Finance Deptment</span>
+                    </div>
+                </div>
+
+                <!--end: Head -->
+
+                <!--begin: Navigation -->
+                <div class="kt-notification">
+                    <div class="kt-notification__custom kt-space-between">
+                        <a href="{% url 'signout' %}" class="btn btn-label btn-label-brand btn-sm btn-bold">Sign Out</a>
+                        <a href="custom/user/login-v2.html" class="btn btn-clean btn-label-brand btn-sm btn-bold">Account</a>
+                    </div>
+                </div>
+
+                <!--end: Navigation -->
+            </div>
+        </div>
+        <!--end: User Bar -->
+    </div>
+    <!-- end:: Header Topbar -->
+
+</div>
+<!-- end:: Header -->

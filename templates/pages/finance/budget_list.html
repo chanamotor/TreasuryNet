@@ -1,0 +1,71 @@
+{% extends 'components/layout/finance/layout.html' %}
+
+
+
+{% block content_header %}
+
+    <div class="kt-subheader  kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">Budget Entry</h3>
+            </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
+                    <a href="{% url 'department_dashboard' %}" class="btn kt-subheader__btn-secondary">Dashboard ></a>
+                    <a class="btn kt-subheader__btn-secondary--active">Budget Entry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_header %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>DDO Code</td>
+            <td>Detail Head</td>
+            <td>Scheme Code</td>
+            <td>Issue Date</td>
+            <td>Order Number</td>
+            <td>DA Number</td>
+            <td>Valid From</td>
+            <td>Valid To</td>
+            <td>Amount</td>
+            <td>
+                <a href="{% url 'finance_budgetentry' %}" class="btn btn-outline-success">
+                    <i class="fas fa-plus"></i> Add New
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for budget in budget_list %}
+            <tr>
+                <td>{{budget.ddo_code}}</td>
+                <td>{{budget.detail_head}}</td>
+                <td>{{budget.scheme_code}}</td>
+                <td>{{budget.issue_date}}</td>
+                <td>{{budget.order_no}}</td>
+                <td>{{budget.da_no}}</td>
+                <td>{{budget.valid_from}}</td>
+                <td>{{budget.valid_to}}</td>
+                <td>{{budget.amount}}</td>
+                <td>
+                    <a href="{% url 'finance_budgetupdate' budget.id %}" class="btn text-secondary px-0">
+                        <i class="far fa-edit fa-lg"></i>
+                    </a>
+                    <form action="{% url 'finance_budgetdelete' budget.id %}" method="post" class="d-inline">
+                        {% csrf_token %}
+                        <button type="submit" class="btn">
+                            <i class="far fa-trash-alt fa-lg text-danger float-right"></i>
+                        </button>
+                    </form>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}

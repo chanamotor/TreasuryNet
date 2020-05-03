@@ -1,0 +1,127 @@
+{% extends 'components/layout/finance/layout.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content_header %}
+
+    <div class="kt-subheader  kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">Budget Entry</h3>
+            </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
+                    <a href="{% url 'department_dashboard' %}" class="btn kt-subheader__btn-secondary">Dashboard ></a>
+                    <a class="btn kt-subheader__btn-secondary--active">Budget Entry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_header %}
+
+
+{% block content %}
+
+<div class="kt-container  kt-container--fluid  kt-grid__item kt-grid__item--fluid">
+  <div class="col-lg-12">
+    <div class="kt-portlet">
+
+      <form class="kt-form kt-form--label-right" action="" method="post" autocomplete="off">
+          {% csrf_token %}
+          <div class="kt-portlet__body">
+            <div class="form-group row form-group-marginless kt-margin-t-20">
+              <label class="col-lg-1 col-form-label">DDO Code:</label>
+              <div class="col-lg-3">
+                {{form.ddo_code|as_crispy_field}}
+              <span class="form-text text-muted">Please enter ddo code</span>
+              </div>
+              <label class="col-lg-1 col-form-label">Detail Head:</label>
+              <div class="col-lg-3">
+                {{form.detail_head|as_crispy_field}}
+
+                <span class="form-text text-muted">Please enter detail head</span>
+              </div>
+              <label class="col-lg-1 col-form-label">Scheme Code:</label>
+              <div class="col-lg-3">
+                {{form.scheme_code|as_crispy_field}}
+                <span class="form-text text-muted">Please enter scheme code</span>
+              </div>
+            </div>
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
+            <div class="form-group row form-group-marginless">
+              <label class="col-lg-1 col-form-label">Issue Date:</label>
+              <div class="col-lg-3">
+                {{form.issue_date|as_crispy_field}}
+
+                <span class="form-text text-muted">Please enter issue date</span>
+              </div>
+              <label class="col-lg-1 col-form-label">Order Number:</label>
+              <div class="col-lg-3">
+                {{form.order_no|as_crispy_field}}
+                <span class="form-text text-muted">Please enter order number</span>
+              </div>
+            </div>
+            <div class="kt-separator kt-separator--border-dashed kt-separator--space-lg kt-separator--portlet-fit"></div>
+          <div class="form-group row">
+            <label class="col-lg-1 col-form-label">Valid From:</label>
+              <div class="col-lg-3">
+                {{form.valid_from|as_crispy_field}}
+                <span class="form-text text-muted">Please enter date</span>
+              </div>
+              <label class="col-lg-1 col-form-label">Valid To:</label>
+              <div class="col-lg-3">
+                {{form.valid_to|as_crispy_field}}
+                <span class="form-text text-muted">Please enter date</span>
+              </div>
+              <label class="col-lg-1 col-form-label">DA Number:</label>
+              <div class="col-lg-3">
+                {{form.da_no|as_crispy_field}}
+                <span class="form-text text-muted">Please enter da number</span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-lg-1 col-form-label">Amount:</label>
+              <div class="col-lg-3">
+                {{form.amount|as_crispy_field}}
+                <span class="form-text text-muted">Please enter Amount</span>
+              </div>
+            </div>
+            <div class="kt-portlet__foot">
+              <div class="kt-form__actions">
+                <div class="row">
+                  <div class="col-lg-5"></div>
+                  <div class="col-lg-7">
+                    <button type="submit" class="btn btn-brand">Submit</button>
+                    <button type="reset" class="btn btn-secondary">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <!-- <div class="row">
+              <div class="col-md-4">
+                  <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                      Submit</button>
+              </div>
+              <div class="col-md-4">
+                  <a href="{% url 'finance_budgetlist' %}" class="btn btn-secondary btn-block btn-lg">
+                      <i class="fas fa-stream"></i> Back to list
+                  </a>
+              </div>
+          </div> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}

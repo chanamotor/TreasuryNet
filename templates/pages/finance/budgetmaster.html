@@ -1,0 +1,28 @@
+{% extends 'components/layout/finance/layout.html' %}
+
+{% block content_header %}
+
+    <div class="kt-subheader  kt-grid__item" id="kt_subheader">
+        <div class="kt-container  kt-container--fluid ">
+            <div class="kt-subheader__main">
+                <h3 class="kt-subheader__title">Budget Entry</h3>
+            </div>
+            <div class="kt-subheader__toolbar">
+                <div class="kt-subheader__wrapper">
+                    <a href="{% url 'department_dashboard' %}" class="btn kt-subheader__btn-secondary">Dashboard ></a>
+                    <a class="btn kt-subheader__btn-secondary--active">Budget Entry</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock content_header %}
+
+{% block content %}
+
+<div class="page-header">
+
+  <a href="{% url 'budgetmaster' %}" class="top-menu"><span class="glyphicon glyphicon-plus"><h1>New Budget Entry</h1></span></a>
+
+</div>
+{% endblock %}
